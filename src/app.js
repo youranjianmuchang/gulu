@@ -15,3 +15,77 @@ new Vue({
         }
     }
 })
+
+import chai from 'chai'
+const {expect} = chai;
+let Constructor = Vue.extend(Button);
+{
+    let button = new Constructor({
+        propsData:{
+            icon:'setting'
+        }
+    })
+    button.$mount();
+    let href = button.$el.querySelector('use').getAttribute('xlink:href');
+    expect(href).to.eq('#i-setting');
+    button.$el.remove();
+    button.$destroy();
+}
+{
+    let button = new Constructor({
+        propsData:{
+            icon:'setting',
+            loading:true
+        }
+    })
+    button.$mount();
+    let href = button.$el.querySelector('use').getAttribute('xlink:href');
+    expect(href).to.eq('#i-loading');
+    button.$el.remove();
+    button.$destroy();
+}
+{
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    let button = new Constructor({
+        propsData:{
+            icon:'setting',
+            iconPosition:'left'
+        }
+    })
+    button.$mount(div);
+    let svg = button.$el.querySelector('svg');
+    let {order} = window.getComputedStyle(svg);
+    expect(order).to.eq('1');
+    button.$el.remove();
+    button.$destroy();
+}
+{
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    let button = new Constructor({
+        propsData:{
+            icon:'setting',
+            iconPosition:'right'
+        }
+    })
+    button.$mount(div);
+    let svg = button.$el.querySelector('svg');
+    let {order} = window.getComputedStyle(svg);
+    expect(order).to.eq('2');
+    button.$el.remove();
+    button.$destroy();
+}
+{
+    let button = new Constructor({
+        propsData:{
+            icon:'setting'
+        }
+    })
+    button.$mount();
+    button.$on('click',function(){
+        console.log(1);
+    })
+    button.$el.click();
+
+}
