@@ -5,8 +5,8 @@
 </template>
 <script>
     export default {
+        name:'GButtonGroup',
         mounted() {
-
             for(let node of this.$el.children){
                 let name = node.nodeName.toLowerCase();
                 if(name !=='button'){
