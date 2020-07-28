@@ -33,7 +33,6 @@
 </script>
 <style scoped lang="less">
     .col {
-        width: 50%;
         min-height: 100px;
     }
 
