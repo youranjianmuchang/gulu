@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-    let validator = value =>{
+    let validator = value => {
         let keys = Object.keys(value);
         let valid = true;
         keys.forEach(key => {
@@ -34,17 +34,26 @@
                 gutter: 0,
             }
         },
+        methods: {
+            setClass(obj, str = '') {
+                if (!obj) return [];
+                let array = [];
+                obj.span && array.push(`col-${str}${obj.span}`);
+                obj.offset && array.push(`offset-${str}${obj.offset}`);
+                return array;
+            }
+        },
         computed: {
             classStr() {
-                let {span, offset, phone,ipad,narrow,pc,widePc} = this;
+                let {span, offset, phone, ipad, narrow, pc, widePc} = this;
+                let {setClass} = this;
                 return [
-                    span && `col-${span}`,
-                    offset && `offset-${offset}`,
-                    ...(phone ? [`col-phone-${phone.span}`] :[]),
-                    ...(ipad ? [`col-ipad-${ipad.span}`] :[]),
-                    ...(narrow ? [`col-narrow-${narrow.span}`] :[]),
-                    ...(pc ? [`col-pc-${pc.span}`] :[]),
-                    ...(widePc ? [`col-wide-pc-${widePc.span}`] :[])
+                    ...(setClass({span, offset})),
+                    ...(setClass(phone, 'phone-')),
+                    ...(setClass(ipad, 'ipad-')),
+                    ...(setClass(narrow, 'narrow-')),
+                    ...(setClass(pc, 'pc-')),
+                    ...(setClass(widePc, 'widePc-')),
                 ]
             },
             styleStr() {
@@ -127,7 +136,7 @@
         .setNarrowOffset(1);
     }
 
-    @media (min-width: 993px){
+    @media (min-width: 993px) {
         .setPCWidth(@count) when (@count < 25) {
             .setPCWidth(@count+1);
             .col-pc-@{count} {
@@ -143,7 +152,8 @@
         }
         .setPCOffset(1);
     }
-    @media (min-width: 1201px){
+
+    @media (min-width: 1201px) {
         .setWidePCWidth(@count) when (@count < 25) {
             .setWidePCWidth(@count+1);
             .col-wide-pc-@{count} {
