@@ -13,45 +13,44 @@ import Header from './header';
 import Toast from './Toast';
 import Plugin from './plugin'
 
-Vue.component('g-button',Button);
-Vue.component('g-icon',Icon);
-Vue.component('g-button-group',ButtonGroup);
-Vue.component('g-input',Input);
-Vue.component('g-row',Row);
-Vue.component('g-col',Col);
-Vue.component('g-content',Content);
-Vue.component('g-footer',Footer);
-Vue.component('g-layout',Layout);
-Vue.component('g-sider',Sider);
-Vue.component('g-header',Header);
-Vue.component('g-toast',Toast);
+Vue.component('g-button', Button);
+Vue.component('g-icon', Icon);
+Vue.component('g-button-group', ButtonGroup);
+Vue.component('g-input', Input);
+Vue.component('g-row', Row);
+Vue.component('g-col', Col);
+Vue.component('g-content', Content);
+Vue.component('g-footer', Footer);
+Vue.component('g-layout', Layout);
+Vue.component('g-sider', Sider);
+Vue.component('g-header', Header);
+Vue.component('g-toast', Toast);
 Vue.use(Plugin);
 new Vue({
-    el:"#app",
-    data(){
+    el: "#app",
+    data() {
         return {
-            loading1:false,
-            loading2:false,
-            loading3:false,
-            message:'hi'
+            loading1: false,
+            loading2: false,
+            loading3: false,
+            message: 'hi'
         }
     },
-    methods:{
-        inputChange(e){
+    methods: {
+        inputChange(e) {
             console.log(e);
         },
-        showToast(){
-            this.$toast('<strong>我是message<strong><a href="www.baidu.com">qq</a>',{
-                closeButton:{
-                    text:'知道了',
-                    callback(){
+        showToast() {
+            this.$toast(`智商下降${parseInt(Math.random() * 100)}`, {
+                closeButton: {
+                    text: '知道了',
+                    callback() {
                         console.log('用户知道了');
                     }
                 },
-                autoClose:true,
-                autoCloseDelay:5,
-                enableHtml:true,
-                position:'bottom'
+                autoClose: true,
+                autoCloseDelay: 5,
+                position: 'bottom'
             })
         }
     }
