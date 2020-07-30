@@ -39,10 +39,18 @@ new Vue({
     methods:{
         inputChange(e){
             console.log(e);
+        },
+        showToast(){
+            this.$toast('<strong>我是message<strong><a href="www.baidu.com">qq</a>',{
+                closeButton:{
+                    text:'知道了',
+                    callback(){
+                        console.log('用户知道了');
+                    }
+                },
+                enableHtml:true
+            })
         }
-    },
-    created(){
-        this.$toast('我是message');
     }
 })
 
