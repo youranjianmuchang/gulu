@@ -35,76 +35,91 @@
         body {
             font-size: var(--font-size);
         }
+        .demo{
+            min-height: 60px;
+            border: 1px solid #666;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-row>
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-    </g-row>
-    <g-row>
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-        <g-col>1</g-col>
-    </g-row>
-    <g-row>
-        <g-col style="background-color: red" span="2" :phone="{span:24}"  :ipad="{span:8}" :narrow="{span:6}" >
-            <g-row align="left">
-                <g-col>1</g-col>
-                <g-col>1</g-col>
-            </g-row>
-        </g-col>
-        <g-col style="background-color: gray" span="12" :phone="{span:24}" :ipad="{span:8}" :narrow="{span:18}">
-            <g-row align="right">
-                <g-col>1</g-col>
-                <g-col>1</g-col>
-            </g-row>
-        </g-col>
-        <g-col style="background-color: green" span="10" :phone="{span:24}" :ipad="{span:8}" :narrow="{span:18}">
-            <g-row align="right">
-                <g-col>1</g-col>
-                <g-col>1</g-col>
-            </g-row>
-        </g-col>
-    </g-row>
-    <hr/>
-    <div class="box">
-        <g-input value="张三" readonly></g-input>
-        <g-input value="李四" disabled></g-input>
-        <g-input value="王五" v-model="message" @change="inputChange"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王五" error="姓名不能少于两个字"></g-input>
-    </div>
-    <div class="box">
-        <g-button :loading="loading1" @click="loading1 = !loading1">
-            设置
-        </g-button>
-        <g-button :loading="loading2" @click="loading2 = !loading2" icon="setting" icon-position="left">
-            设置
-        </g-button>
-        <g-button :loading="loading3" @click="loading3 = !loading3" icon="setting" icon-position="right">
-            设置
-        </g-button>
-        <g-button-group>
-            <g-button icon="left">
-                上一页
-            </g-button>
-            <g-button>
-                更多
-            </g-button>
-            <g-button icon="right" icon-position="right">
-                下一页
-            </g-button>
-        </g-button-group>
-    </div>
+    <g-layout style="height: 100vh">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+            <g-header class="demo"></g-header>
+            <g-content class="demo"></g-content>
+            <g-footer class="demo"></g-footer>
+        </g-layout>
+
+    </g-layout>
+
+<!--    <hr/>-->
+<!--    <g-row>-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--    </g-row>-->
+<!--    <g-row>-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--    </g-row>-->
+<!--    <g-row gutter="20">-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--        <g-col>1</g-col>-->
+<!--    </g-row>-->
+<!--    <g-row>-->
+<!--        <g-col style="background-color: red" span="2" :phone="{span:24}"  :ipad="{span:8}" :narrow="{span:6}" >-->
+<!--            <g-row align="left">-->
+<!--                <g-col>1</g-col>-->
+<!--                <g-col>1</g-col>-->
+<!--            </g-row>-->
+<!--        </g-col>-->
+<!--        <g-col style="background-color: gray" span="12" :phone="{span:24}" :ipad="{span:8}" :narrow="{span:18}">-->
+<!--            <g-row align="right">-->
+<!--                <g-col>1</g-col>-->
+<!--                <g-col>1</g-col>-->
+<!--            </g-row>-->
+<!--        </g-col>-->
+<!--        <g-col style="background-color: green" span="10" :phone="{span:24}" :ipad="{span:8}" :narrow="{span:18}">-->
+<!--            <g-row align="right">-->
+<!--                <g-col>1</g-col>-->
+<!--                <g-col>1</g-col>-->
+<!--            </g-row>-->
+<!--        </g-col>-->
+<!--    </g-row>-->
+<!--    <hr/>-->
+<!--    <div class="box">-->
+<!--        <g-input value="张三" readonly></g-input>-->
+<!--        <g-input value="李四" disabled></g-input>-->
+<!--        <g-input value="王五" v-model="message" @change="inputChange"></g-input>-->
+<!--    </div>-->
+<!--    <div class="box">-->
+<!--        <g-input value="王五" error="姓名不能少于两个字"></g-input>-->
+<!--    </div>-->
+<!--    <div class="box">-->
+<!--        <g-button :loading="loading1" @click="loading1 = !loading1">-->
+<!--            设置-->
+<!--        </g-button>-->
+<!--        <g-button :loading="loading2" @click="loading2 = !loading2" icon="setting" icon-position="left">-->
+<!--            设置-->
+<!--        </g-button>-->
+<!--        <g-button :loading="loading3" @click="loading3 = !loading3" icon="setting" icon-position="right">-->
+<!--            设置-->
+<!--        </g-button>-->
+<!--        <g-button-group>-->
+<!--            <g-button icon="left">-->
+<!--                上一页-->
+<!--            </g-button>-->
+<!--            <g-button>-->
+<!--                更多-->
+<!--            </g-button>-->
+<!--            <g-button icon="right" icon-position="right">-->
+<!--                下一页-->
+<!--            </g-button>-->
+<!--        </g-button-group>-->
+<!--    </div>-->
 </div>
 </body>
 <script src="./src/app.js"></script>
