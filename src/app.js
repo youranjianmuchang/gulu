@@ -48,7 +48,10 @@ new Vue({
                         console.log('用户知道了');
                     }
                 },
-                enableHtml:true
+                autoClose:true,
+                autoCloseDelay:5,
+                enableHtml:true,
+                position:'bottom'
             })
         }
     }

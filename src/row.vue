@@ -10,10 +10,10 @@
             gutter: {
                 type: [Number, String]
             },
-            align:{
-                type:String,
-                validator(value){
-                    return ['left','right','center'].includes(value)
+            align: {
+                type: String,
+                validator(value) {
+                    return ['left', 'right', 'center'].indexOf(value) >= 0
                 }
             }
         },
@@ -27,7 +27,7 @@
                 let {gutter} = this;
                 return {marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px'};
             },
-            rowClass(){
+            rowClass() {
                 let {align} = this;
                 return [align && `align-${align}`];
             }
@@ -37,13 +37,16 @@
 <style scoped lang="less">
     .row {
         display: flex;
-        &.align-left{
+
+        &.align-left {
             justify-content: flex-start;
         }
-        &.align-right{
+
+        &.align-right {
             justify-content: flex-end;
         }
-        &.align-center{
+
+        &.align-center {
             justify-content: center;
         }
     }
