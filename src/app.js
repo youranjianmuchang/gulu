@@ -40,7 +40,16 @@ new Vue({
         inputChange(e) {
             console.log(e);
         },
-        showToast() {
+        showToast1(){
+            this.showToast('top');
+        },
+        showToast2(){
+            this.showToast('middle');
+        },
+        showToast3(){
+            this.showToast('bottom');
+        },
+        showToast(position) {
             this.$toast(`智商下降${parseInt(Math.random() * 100)}`, {
                 closeButton: {
                     text: '知道了',
@@ -50,7 +59,7 @@ new Vue({
                 },
                 autoClose: true,
                 autoCloseDelay: 5,
-                position: 'bottom'
+                position
             })
         }
     }
