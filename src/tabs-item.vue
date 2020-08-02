@@ -43,6 +43,10 @@
     .tabs-item{
         flex-shrink: 0;
         padding: 0 2em;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
         &.active{
             background-color: #ff9400;
             color: #fff;
