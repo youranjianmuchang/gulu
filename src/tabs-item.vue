@@ -1,14 +1,16 @@
 <template>
-    <div class="tabs-item" @click="onClick" :class="classes"><slot></slot></div>
+    <div class="tabs-item" @click="onClick" :class="classes" :data-item="name"><slot></slot></div>
 </template>
 <script>
     export default {
         name:'GTabsItem',
         inject:['eventBus'],
         created() {
-            this.eventBus.$on('update:selected',(name,vm)=>{
-                this.active = this.name === name;
-            })
+            if(this.eventBus){
+                this.eventBus.$on('update:selected',(name,vm)=>{
+                    this.active = this.name === name;
+                })
+            }
         },
         data(){
           return {
@@ -35,7 +37,7 @@
         },
         methods:{
             onClick(){
-                !this.disabled && this.eventBus.$emit('update:selected',this.name,this)
+                !this.disabled && this.eventBus.$emit && this.eventBus.$emit('update:selected',this.name,this)
             }
         }
     }
