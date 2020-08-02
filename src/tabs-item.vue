@@ -18,7 +18,8 @@
         computed:{
           classes(){
               return {
-                  active:this.active
+                  active:this.active,
+                  disabled:this.disabled
               }
           }  
         },
@@ -34,12 +35,13 @@
         },
         methods:{
             onClick(){
-                this.eventBus.$emit('update:selected',this.name,this)
+                !this.disabled && this.eventBus.$emit('update:selected',this.name,this)
             }
         }
     }
 </script>
 <style lang="less" scoped>
+    @disabled-color:grey;
     .tabs-item{
         flex-shrink: 0;
         padding: 0 2em;
@@ -50,6 +52,9 @@
         &.active{
             color: #ff9400;
             font-weight: bold;
+        }
+        &.disabled{
+            color: @disabled-color;
         }
     }
 </style>
