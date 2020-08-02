@@ -41,14 +41,14 @@
 <div id="app">
     <g-tabs :selected.sync="selected">
         <g-tabs-head>
-            <template name="actions">
-                <button>设置</button>
-            </template>
             <g-tabs-item name="woman">
                 <g-icon name="setting"></g-icon>美女
             </g-tabs-item>
             <g-tabs-item name="finance">财经</g-tabs-item>
             <g-tabs-item name="sports">体育</g-tabs-item>
+            <template slot="actions">
+                <button>设置</button>
+            </template>
         </g-tabs-head>
         <g-tabs-body>
             <g-tabs-pane name="woman">美女</g-tabs-pane>
