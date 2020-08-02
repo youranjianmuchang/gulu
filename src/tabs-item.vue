@@ -6,7 +6,7 @@
         name:'GTabsItem',
         inject:['eventBus'],
         created() {
-            this.eventBus.$on('update:selected',(name)=>{
+            this.eventBus.$on('update:selected',(name,vm)=>{
                 this.active = this.name === name;
             })
         },
@@ -34,7 +34,7 @@
         },
         methods:{
             onClick(){
-                this.eventBus.$emit('update:selected',this.name)
+                this.eventBus.$emit('update:selected',this.name,this)
             }
         }
     }
@@ -48,8 +48,8 @@
         height: 100%;
         cursor: pointer;
         &.active{
-            background-color: #ff9400;
-            color: #fff;
+            color: #ff9400;
+            font-weight: bold;
         }
     }
 </style>

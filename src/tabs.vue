@@ -32,7 +32,15 @@
             }
         },
         mounted() {
-            this.eventBus.$emit('update:selected',this.selected);
+            this.$children.forEach((vm)=>{
+                if(vm.$options.name === 'GTabsHeader'){
+                    vm.$children.forEach((children)=>{
+                        if(children.$options.name === 'GTabsItem' && children.name === this.selected){
+                            this.eventBus.$emit('update:selected',this.selected,children);
+                        }
+                    })
+                }
+            })
         }
     }
 </script>

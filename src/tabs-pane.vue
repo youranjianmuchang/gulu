@@ -33,7 +33,7 @@
 <style lang="less" scoped>
     .tabs-pane{
         &.active{
-            background-color: #ff9400;
+            padding: 1em;
         }
     }
 </style>
