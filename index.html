@@ -35,9 +35,21 @@
 </head>
 <body>
 <div id="app" style="padding-top: 100px;padding-left: 20px">
-    <g-popover>
-        <template slot="content">内容内容内容</template>
-        <template><button>点我</button></template>
+    <g-popover position="top">
+        <template slot="content">toptoptoptoptoptoptoptop</template>
+        <template><g-button>上方弹出</g-button></template>
+    </g-popover>
+    <g-popover position="bottom">
+        <template slot="content">bottombottombottombottom</template>
+        <template><g-button>下方弹出</g-button></template>
+    </g-popover>
+    <g-popover position="left">
+        <template slot="content">leftleftleftleftleft</template>
+        <template><g-button>左边弹出</g-button></template>
+    </g-popover>
+    <g-popover position="right">
+        <template slot="content">rightrightrightright</template>
+        <template><g-button>右边弹出</g-button></template>
     </g-popover>
     <hr>
 <!--    <g-tabs :selected.sync="selected" style="marginTop:200px">-->
