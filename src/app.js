@@ -50,7 +50,8 @@ new Vue({
             loading2: false,
             loading3: false,
             message: 'hi',
-            selected:'sports'
+            selected:'sports',
+            selectedCollapse:'2'
         }
     },
     methods: {
