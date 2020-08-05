@@ -51,7 +51,7 @@ new Vue({
             loading3: false,
             message: 'hi',
             selected:'sports',
-            selectedCollapse:'2'
+            selectedCollapse:['1','2']
         }
     },
     methods: {
