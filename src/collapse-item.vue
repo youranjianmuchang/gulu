@@ -1,6 +1,6 @@
 <template>
     <div class="collapseItem">
-        <div class="title" @click="open = !open">{{title}}</div>
+        <div class="title" @click="show">{{title}}</div>
         <div class="content" v-if="open">
             <slot></slot>
         </div>
@@ -9,15 +9,36 @@
 <script>
     export default {
         name:'GCollapseItem',
+        inject:['eventBus'],
         props:{
             title:{
                 type:String,
                 required:true
             }
         },
+        mounted(){
+            this.eventBus && this.eventBus.$on('update:selected',vm =>{
+                if(this !== vm){
+                    this.close();
+                }
+            });
+        },
         data(){
             return {
                 open:false
+            }
+        },
+        methods:{
+            show(){
+                if(this.open){
+                    this.open = false;
+                }else{
+                    this.open = true;
+                    this.eventBus && this.eventBus.$emit('update:selected',this);
+                }
+            },
+            close(){
+                this.open = false;
             }
         }
     }
