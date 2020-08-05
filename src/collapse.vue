@@ -11,6 +11,10 @@
             single:{
                 type:Boolean,
                 default:false
+            },
+            selected:{
+                type:String,
+                default:'1'
             }
         },
         data(){
@@ -19,11 +23,12 @@
             }
         },
         provide(){
-            if(this.single){
-                return{
-                    eventBus:this.eventBus
-                }
+            return{
+                eventBus:this.eventBus
             }
+        },
+        mounted(){
+            this.eventBus.$emit('update:selected',this.selected);
         }
     }
 </script>
