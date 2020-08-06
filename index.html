@@ -43,19 +43,19 @@
     </g-collapse>
     <hr style="margin:20px 0">
     <g-popover position="top">
-        <template slot="content" slot-scope="{close}">toptoptoptoptoptoptoptop <g-button @click="close">关闭</g-button> </template>
+        <template slot="content" slot-scope="{close}">top<g-button @click="close">关闭</g-button> </template>
         <template><g-button>上方弹出</g-button></template>
     </g-popover>
     <g-popover position="bottom" trigger="click">
-        <template slot="content">bottombottombottombottom</template>
+        <template slot="content">bottom</template>
         <template><g-button>下方弹出</g-button></template>
     </g-popover>
     <g-popover position="left" trigger="click">
-        <template slot="content">leftleftleftleftleft</template>
+        <template slot="content">left</template>
         <template><g-button>左边弹出</g-button></template>
     </g-popover>
     <g-popover position="right" trigger="click">
-        <template slot="content">rightrightrightright</template>
+        <template slot="content">right</template>
         <template><g-button>右边弹出</g-button></template>
     </g-popover>
     <hr>
@@ -75,23 +75,23 @@
         <template slot="content">rightrightrightright</template>
         <template><g-button>右边弹出</g-button></template>
     </g-popover>
-    <g-tabs :selected.sync="selected" style="marginTop:200px">
-        <g-tabs-head>
-            <g-tabs-item name="woman">
-                <g-icon name="setting"></g-icon>美女
-            </g-tabs-item>
-            <g-tabs-item name="finance">财经</g-tabs-item>
-            <g-tabs-item name="sports">体育</g-tabs-item>
-            <template slot="actions">
-                <button>设置</button>
-            </template>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="woman">美女</g-tabs-pane>
-            <g-tabs-pane name="sports">体育</g-tabs-pane>
-            <g-tabs-pane name="finance">财经</g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
+<!--    <g-tabs :selected.sync="selected" style="marginTop:200px">-->
+<!--        <g-tabs-head>-->
+<!--            <g-tabs-item name="woman">-->
+<!--                <g-icon name="setting"></g-icon>美女-->
+<!--            </g-tabs-item>-->
+<!--            <g-tabs-item name="finance">财经</g-tabs-item>-->
+<!--            <g-tabs-item name="sports">体育</g-tabs-item>-->
+<!--            <template slot="actions">-->
+<!--                <button>设置</button>-->
+<!--            </template>-->
+<!--        </g-tabs-head>-->
+<!--        <g-tabs-body>-->
+<!--            <g-tabs-pane name="woman">美女</g-tabs-pane>-->
+<!--            <g-tabs-pane name="sports">体育</g-tabs-pane>-->
+<!--            <g-tabs-pane name="finance">财经</g-tabs-pane>-->
+<!--        </g-tabs-body>-->
+<!--    </g-tabs>-->
 <!--    <hr>-->
 <!--    <button @click="showToast1">top</button>-->
 <!--    <button @click="showToast2">middle</button>-->

@@ -17,6 +17,7 @@
     }
 </script>
 <style lang="less">
+    @border-radius:4px;
     .g-button-group{
         display: inline-flex;
         vertical-align: middle;
@@ -24,10 +25,10 @@
             border-radius: 0;
             margin-left: -1px;
             &:first-of-type{
-                border-radius: var(--border-radius) 0 0 var(--border-radius);
+                border-radius: @border-radius 0 0 @border-radius;
             }
             &:last-of-type{
-                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+                border-radius: 0 @border-radius @border-radius 0;
             }
             &:hover{
                 position: relative;
