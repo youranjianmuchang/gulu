@@ -11,13 +11,19 @@
         <h3>JS</h3>
         <pre><code>&nbsp;{{jsStr1}}</code></pre>
 
-        <h3>点击按钮关闭</h3>
+        <h3 style="margin-top: 100px">点击按钮关闭</h3>
         <g-button @click="showToast('top')">top</g-button>
         <g-button @click="showToast('middle')">middle</g-button>
         <g-button @click="showToast('bottom')">button</g-button>
         <h2>代码</h2>
         <h3>JS</h3>
         <pre><code>&nbsp;{{jsStr2}}</code></pre>
+
+        <h3 style="margin-top: 100px">内容支持HTML</h3>
+        <g-button @click="showEnableHtmlToast('middle')">支持HTML</g-button>
+        <h2>代码</h2>
+        <h3>JS</h3>
+        <pre><code>&nbsp;{{jsStr3}}</code></pre>
     </div>
 </template>
 
@@ -66,6 +72,13 @@
                     position
                 })
             },
+            showEnableHtmlToast(position) {
+                this.$toast(`<strong style="color: red">支持HTML</strong>`, {
+                    position,
+                    autoClose:3,
+                    enableHtml:true
+                })
+            },
             createToast({Vue, message, propsData, onClose}) {
                 let Constructor = Vue.extend(Toast);
                 let toast = new Constructor({propsData});
@@ -104,6 +117,15 @@
                                 &nbsp;&nbsp;&nbsp;}
                             &nbsp;&nbsp;},
                             &nbsp;&nbsp;position
+                        &nbsp;})
+                    }
+                `.replace(/\t+| +/g,' ').replace(/&nbsp;+/g,'    ').trim(),
+                jsStr3:`
+                    showToast(position) {
+                        &nbsp;this.$toast(\`3秒后自动消失\`, {
+                            &nbsp;&nbsp;position,
+                            &nbsp;&nbsp;autoClose:3，
+                            &nbsp;&nbsp;enableHtml:true
                         &nbsp;})
                     }
                 `.replace(/\t+| +/g,' ').replace(/&nbsp;+/g,'    ').trim(),
