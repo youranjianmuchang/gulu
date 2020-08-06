@@ -9,35 +9,38 @@
 </template>
 <script>
     export default {
-        name:'GTabsHeader',
-        inject:['eventBus'],
+        name: 'GTabsHeader',
+        inject: ['eventBus'],
         mounted() {
-            this.eventBus.$on('update:selected',(name,vm)=>{
-                let {width,left} = vm.$el.getBoundingClientRect();
+            this.eventBus.$on('update:selected', (name, vm) => {
+                let {left: headerLst} = this.$el.getBoundingClientRect();
+                let {width, left} = vm.$el.getBoundingClientRect();
                 this.$refs.line.style.width = `${width}px`;
-                this.$refs.line.style.left = `${left}px`;
+                this.$refs.line.style.left = `${left - headerLst}px`;
             })
         }
     }
 </script>
 <style lang="less" scoped>
-    @tab-height:40px;
-    @yellow:#ff9400;
-    @border-color:#ddd;
-    .tabs-head{
+    @tab-height: 40px;
+    @yellow: #ff9400;
+    @border-color: #ddd;
+    .tabs-head {
         display: flex;
-        height:@tab-height;
+        height: @tab-height;
         justify-content: flex-start;
         position: relative;
         align-items: center;
         border-bottom: 1px solid @border-color;
-        > .line{
+
+        > .line {
             position: absolute;
-            bottom:0;
-            border-bottom:1px solid @yellow;
+            bottom: 0;
+            border-bottom: 1px solid @yellow;
             transition: all 250ms;
         }
-        .actions-wrapper{
+
+        .actions-wrapper {
             margin-left: auto;
         }
     }

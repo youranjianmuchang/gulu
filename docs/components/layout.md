@@ -1,9 +1,8 @@
 ---
-title: layout
+title: Layout
 ---
 
-# layout
-使用方法
+# 布局
 <ClientOnly>
 <layout-demo></layout-demo>
 </ClientOnly>

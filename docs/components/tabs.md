@@ -1,9 +1,8 @@
 ---
-title: tabs
+title: Tabs
 ---
 
-# tabs
-使用方法
+# 标签
 <ClientOnly>
 <tabs-demo></tabs-demo>
 </ClientOnly>

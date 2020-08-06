@@ -1,9 +1,8 @@
 ---
-title: toast
+title: Toast
 ---
 
-# toast
-使用方法
+# Toast
 <ClientOnly>
 <toast-demo></toast-demo>
 </ClientOnly>

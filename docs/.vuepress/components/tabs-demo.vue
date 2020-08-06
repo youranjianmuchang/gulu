@@ -1,30 +1,51 @@
 <template>
     <div>
-        <g-button>默认样式</g-button>
-        <g-button loading>加载中</g-button>
-        <g-button icon="setting">带图标</g-button>
-        <g-button icon="setting" icon-position="right">右边图标</g-button>
-        <g-button disabled>禁用</g-button>
-        <pre><code>{{content}}</code></pre>
+        <h2>预览</h2>
+        <g-tabs selected="1">
+            <g-tabs-head>
+                <g-tabs-item name="1">1</g-tabs-item>
+                <g-tabs-item name="2">2</g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-pane name="1">内容1</g-tabs-pane>
+                <g-tabs-pane name="2">内容2</g-tabs-pane>
+            </g-tabs-body>
+        </g-tabs>
+        <h2>代码</h2>
+        <pre><code>&nbsp;{{content}}</code></pre>
     </div>
 </template>
 
 <script>
-    import Button from '../../../src/button'
+    import Tabs from '../../../src/tabs'
+    import TabsItem from '../../../src/tabs-item'
+    import TabsHead from '../../../src/tabs-head'
+    import TabsBody from '../../../src/tabs-body'
+    import TabsPane from '../../../src/tabs-pane'
+
     export default {
         name: "button-demo.vue",
-        components:{
-            'g-button':Button
+        components: {
+            'g-tabs': Tabs,
+            'g-tabs-item': TabsItem,
+            'g-tabs-head': TabsHead,
+            'g-tabs-body': TabsBody,
+            'g-tabs-pane': TabsPane,
         },
-        data(){
+        data() {
             return {
-                content:`
-                    <g-button>默认样式</g-button>
-                    <g-button loading>加载中</g-button>
-                    <g-button icon="setting">带图标</g-button>
-                    <g-button icon="setting" icon-position="right">右边图标</g-button>
-                    <g-button disabled>禁用</g-button>
-                `.replace(/\t+| +/g,'').trim()
+                content: `
+                    <g-tabs selected="1">
+                        <g-tabs-head>
+                            <g-tabs-item name="1">美女</g-tabs-item>
+                            <g-tabs-item name="2">财经</g-tabs-item>
+                        </g-tabs-head>
+                        <g-tabs-body>
+                            <g-tabs-pane name="1">内容1</g-tabs-pane>
+                            <g-tabs-pane name="2">内容2</g-tabs-pane>
+                        </g-tabs-body>
+                    </g-tabs>
+                `.replace(/\t+| +/g, ' ').trim()
             }
         }
     }

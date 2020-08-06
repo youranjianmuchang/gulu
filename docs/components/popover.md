@@ -1,9 +1,8 @@
 ---
-title: popover
+title: Popover
 ---
 
-# popover
-使用方法
+# 弹出层
 <ClientOnly>
 <popover-demo></popover-demo>
 </ClientOnly>

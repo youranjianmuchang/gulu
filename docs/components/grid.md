@@ -1,9 +1,8 @@
 ---
-title: grid
+title: Grid
 ---
 
-# 按钮
-使用方法
+# 网格
 <ClientOnly>
 <grid-demo></grid-demo>
 </ClientOnly>
