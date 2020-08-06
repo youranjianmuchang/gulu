@@ -24,7 +24,9 @@
             return {
                 content:`
                     <g-input value="张三" readonly></g-input>
+
                     <g-input value="李四" disabled></g-input>
+
                     <g-input value="王" error="姓名不能少于两个字"></g-input>
                 `.replace(/\t+| +/g,' ').trim()
             }

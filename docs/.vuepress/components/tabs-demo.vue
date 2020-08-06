@@ -36,16 +36,16 @@
             return {
                 content: `
                     <g-tabs selected="1">
-                        <g-tabs-head>
-                            <g-tabs-item name="1">美女</g-tabs-item>
-                            <g-tabs-item name="2">财经</g-tabs-item>
-                        </g-tabs-head>
-                        <g-tabs-body>
-                            <g-tabs-pane name="1">内容1</g-tabs-pane>
-                            <g-tabs-pane name="2">内容2</g-tabs-pane>
-                        </g-tabs-body>
+                        &nbsp;<g-tabs-head>
+                            &nbsp;&nbsp;<g-tabs-item name="1">美女</g-tabs-item>
+                            &nbsp;&nbsp;<g-tabs-item name="2">财经</g-tabs-item>
+                        &nbsp;</g-tabs-head>
+                        &nbsp;<g-tabs-body>
+                            &nbsp;&nbsp;<g-tabs-pane name="1">内容1</g-tabs-pane>
+                            &nbsp;&nbsp;<g-tabs-pane name="2">内容2</g-tabs-pane>
+                        &nbsp;</g-tabs-body>
                     </g-tabs>
-                `.replace(/\t+| +/g, ' ').trim()
+                `.replace(/\t+| +/g, ' ').replace(/&nbsp;+/g,'    ').trim()
             }
         }
     }

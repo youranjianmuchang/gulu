@@ -38,16 +38,21 @@
             return {
                 content: `
                     <g-button>默认样式</g-button>
+
                     <g-button loading>加载中</g-button>
+
                     <g-button icon="setting">带图标</g-button>
+
                     <g-button icon="setting" icon-position="right">右边图标</g-button>
+
                     <g-button disabled>禁用</g-button>
+
                     <g-button-group>
-                        <g-button icon="left">上一页</g-button>
-                        <g-button>更多</g-button>
-                        <g-button icon="right" icon-position="right">下一页</g-button>
+                     &nbsp;<g-button icon="left">上一页</g-button>
+                     &nbsp;<g-button>更多</g-button>
+                     &nbsp;<g-button icon="right" icon-position="right">下一页</g-button>
                     </g-button-group>
-                `.replace(/\t+| +/g, ' ').trim(),
+                `.replace(/\t+| +/g, ' ').replace(/&nbsp;+/g,'    ').trim(),
                 loading1: false,
                 loading2: true,
                 loading3: false,

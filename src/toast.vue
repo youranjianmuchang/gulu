@@ -5,8 +5,8 @@
                 <slot v-if="!enableHtml"></slot>
                 <div v-else v-html="$slots.default[0]"></div>
             </div>
-            <div class="line" ref="line"></div>
-            <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+            <div v-if="!autoClose" class="line" ref="line"></div>
+            <span class="close" v-if="!autoClose" @click="onClickClose">{{closeButton.text}}</span>
         </div>
     </div>
 </template>
@@ -54,7 +54,7 @@
         },
         mounted() {
             this.execAutoClose();
-            // this.updateStyle();
+            this.updateStyle();
         },
         methods: {
             execAutoClose() {
@@ -66,7 +66,9 @@
             },
             updateStyle() {
                 this.$nextTick(() => {
-                    this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+                    if(this && this.$refs && this.$refs.line){
+                        this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+                    }
                 })
             },
             close() {
@@ -92,6 +94,7 @@
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 30;
         &.position-top {
             top: 0;
             .toast{
