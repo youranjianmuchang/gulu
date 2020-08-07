@@ -122,7 +122,7 @@
                 `.replace(/\t+| +/g,' ').replace(/&nbsp;+/g,'    ').trim(),
                 jsStr3:`
                     showToast(position) {
-                        &nbsp;this.$toast(\`3秒后自动消失\`, {
+                        &nbsp;this.$toast(\`<strong style="color: red">支持HTML</strong>\`, {
                             &nbsp;&nbsp;position,
                             &nbsp;&nbsp;autoClose:3，
                             &nbsp;&nbsp;enableHtml:true

@@ -2,7 +2,7 @@
     <div>
         <h2>预览</h2>
         <h3>第一种</h3>
-        <g-layout>
+        <g-layout class="layout">
             <g-header class="header">header</g-header>
             <g-content class="content">content</g-content>
             <g-footer class="footer">footer</g-footer>
@@ -83,6 +83,9 @@
     }
 </script>
 <style scoped>
+    .layout{
+        color: #fff;
+    }
     .header{
         background-color: red;
         height: 50px;
