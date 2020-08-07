@@ -181,7 +181,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .demoRow{
         margin: 10px 0;
     }
