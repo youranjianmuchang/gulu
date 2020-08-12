@@ -3,6 +3,10 @@ module.exports = {
     title: '轱辘UI',
     description: '一个UI框架',
     themeConfig: {
+        nav: [
+            { text: '首页', link: '/' },
+            { text: 'GitHub', link: 'https://github.com/youranjianmuchang/gulu/' }
+        ],
         sidebar: [
             {
                 title: '入门',

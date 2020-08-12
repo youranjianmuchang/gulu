@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>预览</h2>
-        <g-button :loading="loading1" @click="loading1 = !loading1">默认样式</g-button>
+        <g-button>默认样式</g-button>
         <g-button :loading="loading2" @click="loading2 = !loading2">加载中</g-button>
         <g-button :loading="loading3" @click="loading3 = !loading3" icon="setting">带图标</g-button>
         <g-button :loading="loading4" @click="loading4 = !loading4" icon="setting" icon-position="right">右边图标</g-button>
@@ -20,7 +20,10 @@
             </g-button-group>
         </div>
         <h2>代码</h2>
+        <h3>HTML</h3>
         <pre><code>&nbsp;{{content}}</code></pre>
+        <h3>JS</h3>
+        <pre><code>&nbsp;{{jsStr}}</code></pre>
     </div>
 </template>
 
@@ -39,11 +42,11 @@
                 content: `
                     <g-button>默认样式</g-button>
 
-                    <g-button loading>加载中</g-button>
+                    <g-button :loading="loading2" @click="loading2 = !loading2">加载中</g-button>
 
-                    <g-button icon="setting">带图标</g-button>
+                    <g-button :loading="loading3" @click="loading3 = !loading3" icon="setting">带图标</g-button>
 
-                    <g-button icon="setting" icon-position="right">右边图标</g-button>
+                    <g-button :loading="loading4" @click="loading4 = !loading4" icon="setting" icon-position="right">右边图标</g-button>
 
                     <g-button disabled>禁用</g-button>
 
@@ -58,6 +61,21 @@
                 loading3: false,
                 loading4: false,
                 loading5: false,
+                jsStr:`
+                    import { Button,ButtonGroup } from "j-gulu";
+
+                    components: {
+                        &nbsp;'g-button': Button,
+                        &nbsp;'g-button-group': ButtonGroup
+                    },
+                    data(){
+                        &nbsp;return {
+                            &nbsp;&nbsp;loading2: true,
+                            &nbsp;&nbsp;loading3: false,
+                            &nbsp;&nbsp;loading4: false,
+                        &nbsp;}
+                    }
+                `.replace(/\t+| +/g, ' ').replace(/&nbsp;+/g,'    ').trim()
             }
         }
     }
